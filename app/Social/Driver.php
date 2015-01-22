@@ -2,7 +2,7 @@
 
 use Laravel\Socialite\Contracts\Factory as Socialite;
 
-class Driver {
+abstract class Driver {
 
 	protected $social;
 
