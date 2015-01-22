@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 		<style>
 			body {
@@ -38,8 +39,12 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
+				<div class="title">Socialite Publisher</div>
+
+				<div class="btn-toolbar">
+					<a class="btn btn-primary" href="{{ route('social.login', 'facebook') }}">Login with Facebook</a>
+					<a class="btn btn-info" href="{{ route('social.login', 'twitter') }}">Login with Twitter</a>
+				</div>
 			</div>
 		</div>
 	</body>

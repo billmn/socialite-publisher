@@ -19,3 +19,6 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('social/{driver}/login',    ['as' => 'social.login',    'uses' => 'SocialController@login']);
+Route::get('social/{driver}/callback', ['as' => 'social.callback', 'uses' => 'SocialController@callback']);
