@@ -50,7 +50,7 @@ return [
 		'client_id'     => env('FACEBOOK_ID'),
 		'client_secret' => env('FACEBOOK_SECRET'),
 		'redirect'      => '',
-		'scope'         => 'email, manage_pages, publish_actions',
+		'scopes'        => ['email', 'manage_pages', 'publish_actions'],
 	]
 
 ];
