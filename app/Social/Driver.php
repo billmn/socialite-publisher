@@ -132,8 +132,7 @@ abstract class Driver {
 		if ($file->exists($fileName))
 		{
 			$content = $file->get($fileName);
-
-			$info = json_decode($content, true);
+			$info    = app('encrypter')->decrypt($content);
 
 			return $key ? array_get($info, $key) : $info;
 		}
@@ -149,10 +148,12 @@ abstract class Driver {
 	 */
 	public function saveInfo(array $info)
 	{
-		$file    = app('filesystem.disk');
-		$content = $info + $this->getInfo();
+		$file = app('filesystem.disk');
 
-		if ($file->put("{$this->driver}.json", json_encode($content)))
+		$content = $info + $this->getInfo();
+		$content = app('encrypter')->encrypt($content);
+
+		if ($file->put("{$this->driver}.json", $content))
 		{
 			return $this->getInfo();
 		}
