@@ -37,7 +37,11 @@ class SocialController extends Controller {
 			{
 				return redirect()->route('social.facebook.pages');
 			}
+
+			return redirect()->route('social.message', $driver);
 		}
+
+		return redirect()->back();
 	}
 
 	public function message($driver)
@@ -57,8 +61,6 @@ class SocialController extends Controller {
 
 	public function publish(Request $request, $driver)
 	{
-
-
 		try
 		{
 			$values = $request->except('_token');
