@@ -18,4 +18,9 @@ class Social {
 		return new $class($this->socialite);
 	}
 
+	public function getSocialite()
+	{
+		return $this->socialite;
+	}
+
 }
